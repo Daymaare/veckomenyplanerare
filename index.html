@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veckomenyplanerare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div class="app" id="app">
+        <header>
+        <h1>{{ message }}</h1>
+        </header>
+        <div class="input-group">
+            <label for="name">Skriv in ditt Namn</label>
+            <br>
+            <input class="input-select" v-model="userName" id="userName" type="text" placeholder="Skriv ditt namn">
+        </div>
+
+        <div v-if="userName">
+            <h2 class="greeting">Hej, {{ userName }}!</h2>
+            <div class="meal-form">
+                <label for="day">Välj Dag</label>
+                <select class="input-select" v-model="selectedDay" id="day">
+                    <option value="">Välj dag</option>
+                    <option value="Måndag">Måndag</option>
+                    <option value="Tisdag">Tisdag</option>
+                    <option value="Onsdag">Onsdag</option>
+                    <option value="Torsdag">Torsdag</option>
+                    <option value="Fredag">Fredag</option>
+                    <option value="Lördag">Lördag</option>
+                    <option value="Söndag">Söndag</option>
+                </select>
+                <label for="meal">Lägg till måltid</label>
+                <input class="input-select" v-model="newMeal" id="meal" type="text" placeholder="Skriv måltid">
+                <button @click="addMeal">Lägg till</button>
+            </div>
+            <div class="menu-list">
+                <h3 class="menu-title">Din Veckomeny</h3>
+                <ul>
+                    <li v-for="(meal, index) in weeklyMeals" :key="index">
+                        {{ meal.day }}: {{ meal.name }}
+                        <button class="remove-button" @click="removeMeal(index)">Ta bort</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    message: 'Veckomenyplanerare',
+                    userName: 'Max',
+                    newMeal: '',
+                    selectedDay: '',
+                    weeklyMeals: [
+                        { name: 'Spaghetti Bolognese', day: 'Måndag' },
+                        { name: 'Vegetarisk lasagne', day: 'Tisdag' },
+                        { name: 'Kycklingwok', day: 'Onsdag' },
+                        { name: 'Fiskgratäng', day: 'Torsdag' },
+                        { name: 'Tacos', day: 'Fredag' },
+                        { name: 'Pizza', day: 'Lördag' },
+                        { name: 'Sallad', day: 'Söndag' }
+                    ]
+                }
+            },
+            methods: {
+                addMeal() {
+                    if (this.newMeal.trim() && this.selectedDay) {
+                        this.weeklyMeals.push({ name: this.newMeal.trim(), day: this.selectedDay });
+                        this.newMeal = '';
+                        this.selectedDay = '';
+                    }
+                },
+                removeMeal(index) {
+                    this.weeklyMeals.splice(index, 1);
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
