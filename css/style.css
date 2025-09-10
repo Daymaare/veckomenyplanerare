@@ -1,6 +1,6 @@
 
 header {
-    background-color: beige;
+    background-color: rgb(154, 209, 147);
     color: rgb(0, 0, 0);
     position: fixed;
     top: 0;
@@ -17,7 +17,7 @@ header {
 body {
     padding-top: 70px;
     font-family: quicksand, Arial, sans-serif;
-    background-color: #0539e244;
+    background-color: #e7ffe9;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,6 @@ body {
 .menu-title {
     color: #333;
     text-align: center;
-    background-color: beige;
     box-sizing: border-box;
     padding: 5px;
     position: relative;
@@ -51,16 +50,18 @@ body {
 }
 
 .input-group {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #b3dfba;
     padding: 10px;
     border-radius: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .greeting {
     text-align: center;
-    background-color: beige;
+    background-color: rgb(145, 145, 102);
     border-radius: 10px;
 }
 
@@ -75,7 +76,7 @@ li {
     align-items: center;
     border: #333 1px solid;
     padding: 5px;
-    background-color: #fdfdfd;
+    background-color: #e7ffe9;
 }
 
 li:first-child {
