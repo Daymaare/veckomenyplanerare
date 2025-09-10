@@ -1,10 +1,3 @@
-.meal-form {
-    gap: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 header {
     background-color: beige;
@@ -30,14 +23,17 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    font-size: 18px;
 }
 
 .menu-title {
     color: #333;
     text-align: center;
-    border-radius: 10px;
     background-color: beige;
+    box-sizing: border-box;
     padding: 5px;
+    position: relative;
+    width: 100%;
 }
 
 .menu-list {
@@ -47,25 +43,25 @@ body {
 }
 
 .meal-form {
-    padding: 10px;
-    border-radius: 4px;
+    border-radius: 10px;
     flex-direction: column;
     display: flex;
     text-align: center;
-    background-color: #b3dfba;
+    background-color: #b3dfba;;
 }
 
 .input-group {
     text-align: center;
     background-color: #b3dfba;
     padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .greeting {
     text-align: center;
     background-color: beige;
     border-radius: 10px;
-    padding: 10px;
 }
 
 ul {
@@ -77,10 +73,9 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 10px;
     border: #333 1px solid;
     padding: 5px;
-    background-color: #e0e0e0;
+    background-color: #fdfdfd;
 }
 
 li:first-child {
@@ -106,10 +101,32 @@ li button {
 }
 
 .input-select {
-    padding: 8px;
-    border: 1px solid #ccc;
+    padding: 5px;
     border-radius: 4px;
     width: 200px;
     margin-bottom: 10px;
     text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-family: quicksand, Arial, sans-serif;
+    font-size: 16px;
+}
+
+.remove-button {
+    background-color: #fd2525;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
 }
