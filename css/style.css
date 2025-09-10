@@ -24,6 +24,7 @@ body {
     align-items: center;
     width: 100%;
     font-size: 18px;
+    font-weight: bold;
 }
 
 .menu-title {
@@ -33,6 +34,7 @@ body {
     padding: 5px;
     position: relative;
     width: 100%;
+    margin-bottom: -25px;
 }
 
 .menu-list {
@@ -67,7 +69,7 @@ body {
 
 ul {
     list-style-type: none;
-    padding-left: 0;
+    padding: 10px;
 }
 
 li {
@@ -101,6 +103,11 @@ li button {
     box-sizing: border-box;
 }
 
+.input-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
 .input-select {
     padding: 5px;
     border-radius: 4px;
@@ -111,13 +118,15 @@ li button {
     border: 1px solid #ccc;
     font-family: quicksand, Arial, sans-serif;
     font-size: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .remove-button {
-    background-color: #fd2525;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 5px 5px;
+    padding: 5px;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -130,4 +139,14 @@ li button {
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
+}
+
+@media (max-width: 700px) {
+    header {
+        height: 50px;
+        font-size: smaller;
+    }
+    body {
+        font-size: 16px;
+    }
 }
